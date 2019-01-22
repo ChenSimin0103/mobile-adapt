@@ -1,5 +1,9 @@
 ## 这个目录下存放了需要全局使用的公共 css 文件和 js 文件
 
+> 2019.01.22 更新
+   把demo放到了github.io上：https://chensimin0103.github.io/mobile-adapt/
+   期间有一个坑是 vue脚手架打包后index.html 的资源引用路径前面带了个 '/'，导致在github-pages上打开时找不到，解决办法是将 config中的index.js中的 `assetsPublicPath: '/'`,改为 `assetsPublicPath: './',` 这样就是相对路径寻址了
+
 # 内容
 
 - 已有的 scss 宏用于解决 **1px 边框问题** 和 **不同设备中字体显示大小不同问题**
