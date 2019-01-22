@@ -211,10 +211,6 @@
   }
   @media screen and (max-device-width: 422px) and (min-device-width: 407px) {
     font-size: round($font-size);
-    color: red;
-    [data-dpr="3"] & {
-      color: blue;
-    }
   }
   @media screen and (max-device-width: 439px) and (min-device-width: 423px) {
     font-size: round($font-size * 1.02);

@@ -1,17 +1,21 @@
 <template>
   <div class="hello">
-    <!-- <p>红色线为css1像素，绿线为物理1像素；</p>
-    <p>HelloWorld会随着设备dpr更改font-size</p> -->
+    <!-- <p>红色线为css1像素，绿线为物理1像素；</p> -->
+    <p>HelloWorld会随着设备的屏幕宽度更改font-size</p>
     <p class="text">HelloWorld</p>
+    <p>-------------------------分割线----------------------------------------------------------</p>
+    <p>1像素边框：红色为1px，蓝色为更细的物理1像素</p>
     <ul class="items">
+      <li class="border"></li>
       <li class="item border-1px"></li>
-      <li class="item border-1px" v-for="item in items" :key="item.id">{{item.msg}}</li>
+      <!-- <li class="item border-1px" v-for="item in items" :key="item.id">{{item.msg}}</li> -->
     </ul>
-    <p>----分割线----</p>
+    <p>1像素完整边框：</p>
     <ul class="items">
       <li class="item-2 border-1px" v-for="item in items" :key="item.id">{{item.msg}}</li>
     </ul>
-
+    <p>-------------------------分割线----------------------------------------------------------</p>
+    <p>方块的大小会根据屏幕宽度自适应变化，刚好10个占满屏幕宽度</p>
     <div class="block-wrapper">
       <div class="item-div"></div>
       <div class="block1"></div>
@@ -44,10 +48,6 @@ export default {
           id: 2,
           msg: '111',
         },
-        {
-          id: 3,
-          msg: '111',
-        },
       ],
     };
   },
@@ -59,7 +59,7 @@ export default {
 <style lang="scss">
 @import '../common/style/index.scss';
 .text {
-  @include font-size();
+  @include font-size(24px);
   // font-size: 72px
 }
 
@@ -68,6 +68,10 @@ export default {
   // @include border-top-1px(green);
   @include border-bottom-1px(blue);
   // border-top: 1px solid red;
+}
+.border {
+  border-bottom: solid 1px red;
+  margin-bottom: 10px;
 }
 .item-2 {
   font-size: 36px;
